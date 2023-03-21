@@ -9,6 +9,8 @@ declare namespace MonkeyTypes {
 
   type Mode2<M extends Mode> = keyof PersonalBests[M];
 
+  type StringNumber = `${number}`;
+
   type Mode2Custom<M extends Mode> = Mode2<M> | "custom";
 
   interface LanguageGroup {
@@ -293,10 +295,10 @@ declare namespace MonkeyTypes {
 
   interface PersonalBests {
     time: {
-      [key: `${number}`]: PersonalBest[];
+      [key: StringNumber]: PersonalBest[];
     };
     words: {
-      [key: `${number}`]: PersonalBest[];
+      [key: StringNumber]: PersonalBest[];
     };
     quote: { [quote: string]: PersonalBest[] };
     custom: { custom: PersonalBest[] };
