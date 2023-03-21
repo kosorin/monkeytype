@@ -293,10 +293,10 @@ declare namespace MonkeyTypes {
 
   interface PersonalBests {
     time: {
-      [key: number]: PersonalBest[];
+      [key: `${number}`]: PersonalBest[];
     };
     words: {
-      [key: number]: PersonalBest[];
+      [key: `${number}`]: PersonalBest[];
     };
     quote: { [quote: string]: PersonalBest[] };
     custom: { custom: PersonalBest[] };
