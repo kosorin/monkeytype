@@ -581,9 +581,9 @@ export async function saveLocalPB<M extends MonkeyTypes.Mode>(
       dbSnapshot.personalBests = {
         time: {},
         words: {},
-        zen: { zen: [] },
-        quote: { custom: [] },
+        quote: {},
         custom: { custom: [] },
+        zen: { zen: [] },
       };
     }
 
@@ -670,9 +670,9 @@ export async function getLocalTagPB<M extends MonkeyTypes.Mode>(
       filteredtag.personalBests = {
         time: {},
         words: {},
-        zen: { zen: [] },
-        quote: { custom: [] },
+        quote: {},
         custom: { custom: [] },
+        zen: { zen: [] },
       };
     }
 
@@ -725,9 +725,9 @@ export async function saveLocalTagPB<M extends MonkeyTypes.Mode>(
       filteredtag.personalBests = {
         time: {},
         words: {},
-        zen: { zen: [] },
-        quote: { custom: [] },
+        quote: {},
         custom: { custom: [] },
+        zen: { zen: [] },
       };
     }
 
@@ -781,9 +781,9 @@ export async function saveLocalTagPB<M extends MonkeyTypes.Mode>(
       filteredtag.personalBests = {
         time: {},
         words: {},
-        zen: { zen: [] },
-        quote: { custom: [] },
+        quote: {},
         custom: { custom: [] },
+        zen: { zen: [] },
       };
       if (mode === "zen") {
         filteredtag.personalBests["zen"] = { zen: [] };
