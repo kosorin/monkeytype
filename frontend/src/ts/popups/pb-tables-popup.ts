@@ -20,7 +20,7 @@ function update(mode: MonkeyTypes.Mode): void {
     snapshot.personalBests === undefined
       ? undefined
       : snapshot.personalBests[mode]
-  ) as { [quote: string]: PersonalBest[] } | undefined;
+  ) as Record<string, PersonalBest[]> | undefined;
 
   if (allmode2 === undefined) return;
 
@@ -76,7 +76,7 @@ function update(mode: MonkeyTypes.Mode): void {
         <td>${dateText}</td>
       </tr>
     `);
-    mode2memory = pb.mode2 as never;
+    mode2memory = pb.mode2;
   });
 }
 

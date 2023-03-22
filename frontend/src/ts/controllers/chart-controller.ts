@@ -118,12 +118,12 @@ export const result: ChartWithUpdateColors<
         pointStyle: "crossRot",
         pointRadius: function (context): number {
           const index = context.dataIndex;
-          const value = context.dataset.data[index];
+          const value = context.dataset.data[index] as number;
           return (value ?? 0) <= 0 ? 0 : 3;
         },
         pointHoverRadius: function (context): number {
           const index = context.dataIndex;
-          const value = context.dataset.data[index];
+          const value = context.dataset.data[index] as number;
           return (value ?? 0) <= 0 ? 0 : 5;
         },
       },
@@ -851,12 +851,12 @@ export const miniResult: ChartWithUpdateColors<
         pointStyle: "crossRot",
         pointRadius: function (context): number {
           const index = context.dataIndex;
-          const value = context.dataset.data[index];
+          const value = context.dataset.data[index] as number;
           return (value ?? 0) <= 0 ? 0 : 3;
         },
         pointHoverRadius: function (context): number {
           const index = context.dataIndex;
-          const value = context.dataset.data[index];
+          const value = context.dataset.data[index] as number;
           return (value ?? 0) <= 0 ? 0 : 5;
         },
       },

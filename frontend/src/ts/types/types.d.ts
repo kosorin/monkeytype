@@ -162,7 +162,7 @@ declare namespace MonkeyTypes {
     wpm: number;
     acc: number;
     mode: string;
-    mode2: string | number;
+    mode2: string;
     punctuation: boolean;
     language: string;
     timestamp: number;
@@ -497,7 +497,7 @@ declare namespace MonkeyTypes {
 
   interface LeaderboardMemory {
     time: {
-      [key in 15 | 60]: {
+      [key in "15" | "60"]: {
         [language: string]: number;
       };
     };
