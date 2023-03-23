@@ -3,9 +3,9 @@ export const defaultSnap: MonkeyTypes.Snapshot = {
   personalBests: {
     time: {},
     words: {},
-    zen: { zen: [] },
-    quote: { custom: [] },
-    custom: { custom: [] },
+    zen: {},
+    quote: {},
+    custom: {},
   },
   name: "",
   customThemes: [],

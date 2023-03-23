@@ -865,8 +865,8 @@ list["clearTagPb"] = new SimplePopup(
         time: {},
         words: {},
         quote: {},
-        zen: { zen: [] },
-        custom: { custom: [] },
+        zen: {},
+        custom: {},
       };
       $(
         `.pageSettings .section.tags .tagsList .tag[id="${tagId}"] .clearPbButton`
@@ -946,8 +946,8 @@ list["resetPersonalBests"] = new SimplePopup(
         time: {},
         words: {},
         quote: {},
-        zen: { zen: [] },
-        custom: { custom: [] },
+        zen: {},
+        custom: {},
       };
     } catch (e) {
       Loader.hide();

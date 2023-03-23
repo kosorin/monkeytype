@@ -144,8 +144,8 @@ async function apply(): Promise<void> {
             time: {},
             words: {},
             quote: {},
-            custom: { custom: [] },
-            zen: { zen: [] },
+            custom: {},
+            zen: {},
           };
         }
       });

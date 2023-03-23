@@ -47,11 +47,11 @@ export async function resetUser(uid: string): Promise<void> {
     {
       $set: {
         personalBests: {
-          custom: { custom: [] },
+          custom: {},
           quote: {},
           time: {},
           words: {},
-          zen: { zen: [] },
+          zen: {},
         },
         lbPersonalBests: {
           time: {},
@@ -123,11 +123,11 @@ export async function clearPb(uid: string): Promise<void> {
     {
       $set: {
         personalBests: {
-          custom: { custom: [] },
+          custom: {},
           quote: {},
           time: {},
           words: {},
-          zen: { zen: [] },
+          zen: {},
         },
         lbPersonalBests: {
           time: {},
@@ -375,10 +375,10 @@ export async function checkIfPb(
   const pb = checkAndUpdatePb(
     user.personalBests ?? {
       time: {},
-      custom: { custom: [] },
+      custom: {},
       quote: {},
       words: {},
-      zen: { zen: [] },
+      zen: {},
     },
     lbPb,
     result
@@ -431,8 +431,8 @@ export async function checkIfTagPb(
     const tagPbs: MonkeyTypes.PersonalBests = tag.personalBests ?? {
       time: {},
       words: {},
-      zen: { zen: [] },
-      custom: { custom: [] },
+      zen: {},
+      custom: {},
       quote: {},
     };
 
@@ -457,10 +457,10 @@ export async function resetPb(uid: string): Promise<void> {
       $set: {
         personalBests: {
           time: {},
-          custom: { custom: [] },
+          custom: {},
           quote: {},
           words: {},
-          zen: { zen: [] },
+          zen: {},
         },
       },
     }
