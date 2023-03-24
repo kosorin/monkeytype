@@ -27,7 +27,9 @@ const debouncedZipfCheck = debounce(250, () => {
           Config.language.replace(/_/g, " ")
         )} does not support Zipf funbox, because the list is not ordered by frequency. Please try another word list.`,
         0,
-        7
+        {
+          duration: 7,
+        }
       );
     }
     if (supports === "unknown") {
@@ -36,7 +38,9 @@ const debouncedZipfCheck = debounce(250, () => {
           Config.language.replace(/_/g, " ")
         )} may not support Zipf funbox, because we don't know if it's ordered by frequency or not. If you would like to add this label, please contact us.`,
         0,
-        7
+        {
+          duration: 7,
+        }
       );
     }
   });
@@ -471,14 +475,18 @@ export async function screenshot(): Promise<void> {
           })
         );
         await navigator.clipboard.write([clipItem]);
-        Notifications.add("Copied to clipboard", 1, 2);
+        Notifications.add("Copied to clipboard", 1, {
+          duration: 2,
+        });
       } catch (e) {
         console.error("Error while saving image to clipboard", e);
         if (blob) {
           Notifications.add(
             "Could not save image to clipboard. Opening in new tab instead (make sure popups are allowed)",
             0,
-            5
+            {
+              duration: 5,
+            }
           );
           open(URL.createObjectURL(blob));
         } else {
@@ -977,7 +985,7 @@ async function loadWordsHistory(): Promise<boolean> {
   return true;
 }
 
-export function toggleResultWords(): void {
+export function toggleResultWords(noAnimation = false): void {
   if (resultVisible) {
     if ($("#resultWordsHistory").stop(true, true).hasClass("hidden")) {
       //show
@@ -993,7 +1001,7 @@ export function toggleResultWords(): void {
           $("#resultWordsHistory")
             .removeClass("hidden")
             .css("display", "none")
-            .slideDown(250, () => {
+            .slideDown(noAnimation ? 0 : 250, () => {
               if (Config.burstHeatmap) {
                 applyBurstHeatmap();
               }
@@ -1006,7 +1014,7 @@ export function toggleResultWords(): void {
         $("#resultWordsHistory")
           .removeClass("hidden")
           .css("display", "none")
-          .slideDown(250);
+          .slideDown(noAnimation ? 0 : 250);
       }
     } else {
       //hide
@@ -1160,7 +1168,9 @@ $(".pageTest #copyWordsListButton").on("click", async () => {
         .join(" ");
     }
     await navigator.clipboard.writeText(words);
-    Notifications.add("Copied to clipboard", 0, 2);
+    Notifications.add("Copied to clipboard", 0, {
+      duration: 2,
+    });
   } catch (e) {
     Notifications.add("Could not copy to clipboard: " + e, -1);
   }
